@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Github Usage</title>
+
+<meta name="author" content="Korben">
+<link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+<link rel="shortcut icon" href="/assets/media/favicon.ico">
+</head>
+<body>
+
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="/">Korben</a>
+			<ul class="nav">
+				
+				
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+				
+				
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+				
+				
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+				
+				
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="content">
+		<div class="page-header">
+  <h1>Github Usage </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h2>Install Git</h2>
+
+<h3>Ubnutu</h3>
+
+<p>{% codeblock lang:bash %}
+sudo apt-get install git-core
+{% endcodeblock %}</p>
+
+<h3>Windows</h3>
+
+<p>Download form <url> and install.</p>
+
+<h2>Config</h2>
+
+<p>Global</p>
+
+<pre><code class="language-bash">git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;Your Email&quot;
+</code></pre>
+
+<p>Config color</p>
+
+<pre><code>git config --global color.ui &quot;auto&quot;
+</code></pre>
+
+<p>Alias</p>
+
+<p>{% codeblock lang:bash %}
+git config –global alias.co checkout
+git config –global alias.br branch
+git config –global alias.ci commit
+git config –global alias.st status
+{% endcodeblock %}</p>
+
+<h2>Git ignore</h2>
+
+<p>Example</p>
+
+<p>{% codeblock lang:bash %}
+DS_Store
+{% endcodeblock %}</p>
+
+<h2>Init a repo</h2>
+
+<p>{% codeblock lang:bash %}
+mkdir REPO
+cd REPO
+git init
+{% endcodeblock %}</p>
+
+<p>{% codeblock lang:bash %}
+git init REPO
+{% endcodeblock %}</p>
+
+<h2>Create a remote repo</h2>
+
+<p>{% codeblock lang:bash %}
+git init --bare test.git # Clone repogit clone test.git
+{% endcodeblock %}</p>
+
+<h2>Clone a remote repo</h2>
+
+<p>{% codeblock lang:bash %}
+git clone url
+{% endcodeblock %}</p>
+
+<h2>Connect a local repo to remote repo</h2>
+
+<h2>Update</h2>
+
+<p>{% codeblock lang:bash %}
+git pull
+{% endcodeblock %}</p>
+
+<h2>Create a branch</h2>
+
+<p>{% codeblock lang:bash %}
+git push origin NewBranch
+{% endcodeblock %}</p>
+
+<h2>Delete remote branch</h2>
+
+<p>{% codeblock lang:bash %}
+git push origin :DeleteBranch
+{% endcodeblock %}</p>
+
+<h2>Delete local branch</h2>
+
+<p>{% codeblock lang:bash %}
+git branch -d DeleteBranch
+{% endcodeblock %}</p>
+
+<h2>Commit</h2>
+
+<p>{% codeblock lang:bash %}
+git commit -a -m &ldquo;some message&rdquo;
+{% endcodeblock %}</p>
+
+<h2>Push</h2>
+
+<p>{% codeblock lang:bash %}
+git push
+{% endcodeblock %}</p>
+
+<h2>Switch to new branch</h2>
+
+<p>{% codeblock lang:bash %}
+git checkout BRANCH
+{% endcodeblock %}</p>
+
+<h2>Rename a branch</h2>
+
+<p>{% codeblock lang:bash %}
+git br -m old_branch_name new_branch_name
+{% endcodeblock %}</p>
+
+<h2>View branch</h2>
+
+<p>Local</p>
+
+<p>{% codeblock lang:bash %}
+git branch
+{% endcodeblock %}</p>
+
+<p>Remote</p>
+
+<p>{% codeblock lang:bash %}
+git branch -r
+{% endcodeblock %}</p>
+
+<p>All</p>
+
+<p>{% codeblock lang:bash %}
+git branch -a
+{% endcodeblock %}</p>
+
+<p>See local branch information</p>
+
+<p>{% codeblock lang:bash %}
+cat .git/config
+{% endcodeblock %}</p>
+
+<h2>Merge</h2>
+
+<p>{% codeblock lang:bash %}
+git merge Branch
+{% endcodeblock %}</p>
+
+<h2>View change log</h2>
+
+<p>View local repo change log</p>
+
+<p>{% codeblock lang:bash %}
+git log
+{% endcodeblock %}</p>
+
+<p>View all branch log</p>
+
+<p>{% codeblock lang:bash %}
+git status
+{% endcodeblock %}</p>
+
+<h2>Tag</h2>
+
+<p>Crate tag</p>
+
+<p>{% codeblock lang:bash %}
+git tag [tag_name] [version]
+{% endcodeblock %}</p>
+
+<p>List current tag</p>
+
+<p>{% codeblock lang:bash %}
+git tag -l
+{% endcodeblock %}</p>
+
+<p>Delete tag</p>
+
+<p>{% codeblock lang:bash %}
+git tag -d [tag name]
+{% endcodeblock %}</p>
+
+<h2>Patch</h2>
+
+<p>{% codeblock lang:bash %}</p>
+
+<p>git diff filename1 filename2
+git diff &gt; xxx.patch
+git apply xxx.patch</p>
+
+<p>{% endcodeblock %}</p>
+
+<h2>Revert</h2>
+
+<p>{% codeblock lang:bash %}
+git revert
+git reset -hard
+{% endcodeblock %}</p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/default/Set-aims/" title="Set aims">Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/default/Work-Effectively/" title="Work Effectively">Next</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2013-02-28</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#default-ref">default <span>27</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#Develop-ref">Develop <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Git-ref">Git <span>1</span></a>
+</li>
+    
+    </ul>
+  </div>
+</div>
+
+	</div>
+
+	<div class="footer">
+		<p>&copy; Korben </p>
+	</div>
+
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f7ecd5cf2ee02b44ddd2545a9597e174";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+---
+layout : default
+---
+<div class="page-header">
+  <h1>{{ page.title }} {{# page.tagline }} <small>{{ . }}</small>{{/ page.tagline }}</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    {{{ content }}}
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          {{# page?previous }}
+            <li class="prev"><a href="{{ url }}" title="{{ title }}">上一篇</a></li>
+          {{/ page?previous }}
+          {{^ page?previous }}
+            <li class="prev disabled"><a>上一篇</a></li>
+          {{/ page?previous }}
+
+          {{# page?next }}
+            <li class="next"><a href="{{ url }}" title="{{ title }}">下一篇</a></li>
+          {{/ page?next }}
+          {{^ page?next }}
+            <li class="next disabled"><a>下一篇</a>
+          {{/ page?next }}
+        </ul>
+      </ul>
+    </div>
+    <hr>
+  </div>
+  
+  <div class="span4">
+    <h4>发布日期</h4>
+    <div class="date"><span>{{ page.date }}</span></div>
+    <br>
+    <h4>目录</h4>
+    <ul class="tag_box">
+    {{# page.categories?to_categories }}
+      {{> categories_list }}
+    {{/ page.categories?to_categories }}
+    </ul>
+    <br>
+    <h4>标签</h4>
+    <ul class="tag_box">
+    {{# page.tags?to_tags }}
+      {{> tags_list }}
+    {{/ page.tags?to_tags }}
+    </ul>
+  </div>
+</div>

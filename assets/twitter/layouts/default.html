@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+{{# page.description }}
+<meta name="description" content="{{ . }}">
+{{/ page.description }}
+<meta name="author" content="{{ site.author.name }}">
+{{{ assets }}} 
+<link rel="shortcut icon" href="/assets/media/favicon.ico">
+</head>
+<body>
+
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="/">{{ site.title }}</a>
+			<ul class="nav">
+				{{# site.navigation?to_pages }}
+				{{> pages_list }}
+				{{/ site.navigation?to_pages }}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="content">
+		{{{ content }}}
+	</div>
+
+	<div class="footer">
+		<p>&copy; {{ site.author.name }} </p>
+	</div>
+
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f7ecd5cf2ee02b44ddd2545a9597e174";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>
